@@ -1,3 +1,4 @@
 # Node.js-Go-RabbitMQ
-a simple implementation communication between two applications using RabbitMQ
+Simple communication implementation based on RabbitMQ
+
 
