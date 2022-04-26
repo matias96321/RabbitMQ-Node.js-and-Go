@@ -1,4 +1,5 @@
-# Node.js-Go-RabbitMQ
+# RabbitMQ-Node.js-and-Go
+
 Simple communication implementation based on RabbitMQ
 
 
