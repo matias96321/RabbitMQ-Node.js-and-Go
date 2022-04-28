@@ -1,5 +1,5 @@
-# RabbitMQ-Node.js-and-Go
+# Node.js + GoLang + RabbitMQ
+> implementing a message broker.
 
-Simple communication implementation based on RabbitMQ
-
+Implementing RabbitMQ as an intermediate layer of communication between two simple applications of different languages.
 
