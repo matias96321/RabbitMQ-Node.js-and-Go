@@ -1,11 +1,11 @@
-import rabbit from 'amqplib'  
+import { connect } from 'amqplib'  
     
 const message = "Hello World"
 const exchange = "hello_world_exchange"
 const queue = "hello_world_queue"
 const routingKey = "hello_world_key"
 
-rabbit.connect("amqp://admin:123456@127.0.0.1:5672/").then((connection)=>{
+connect("amqp://admin:123456@127.0.0.1:5672/").then((connection)=>{
     
     if(!connection)
     throw new Error('Failed to connect to RabbitMQ')
@@ -21,11 +21,11 @@ rabbit.connect("amqp://admin:123456@127.0.0.1:5672/").then((connection)=>{
 
         channel.bindQueue(queue, exchange, routingKey)
 
-        channel.publish(exchange, routingKey, Buffer.from(message))
+        channel.publish(exchange, routingKey, Buffer.from(message)) 
         
-        console.log("Message sent");
+        console.log("Hello world message sent.");
 
-        setTimeout( function() { channel.close(); connection.close();}, 500 );
+        setTimeout( function() { channel.close(); connection.close() }, 500 );
     })
 })
 
