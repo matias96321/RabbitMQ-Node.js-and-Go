@@ -39,4 +39,4 @@ connect("amqp://admin:123456@127.0.0.1:5672/").then((connection)=>{
     })
 })
 ``` 
-
+# Consumer
