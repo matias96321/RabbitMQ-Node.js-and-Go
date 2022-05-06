@@ -22,7 +22,7 @@ func main() {
 	failOnError(err, "Failed to open channel")
 	defer ch.Close()
 
-	msgs, err := ch.Consume(
+	messages, err := ch.Consume(
 		"hello_world_queue",
 		"",
 		true,
@@ -35,8 +35,8 @@ func main() {
 
 	forever := make(chan bool)
 	go func() {
-		for d := range msgs {
-			fmt.Printf("Recieved Message: %s\n", d.Body)
+		for message := range messages {
+			fmt.Printf("Recieved Message: %s\n", message.Body)
 		}
 	}()
 
