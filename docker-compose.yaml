@@ -1,7 +1,8 @@
 services:
-  rabbitmq: 
+  rabbitmq:
+    hostname: 'dev-rabbitmq' 
     image: rabbitmq:3-management
-    container_name: rabbit
+    container_name: 'project-rabbitmq'
     restart: always
     ports:
       - 5672:5672
@@ -10,5 +11,10 @@ services:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=123456
     volumes:
-      - ./rabbitmq/data:/var/lib/rabbitmq  
-        
+      - ./rabbitmq/data/:/var/lib/rabbitmq/
+    networks:
+            - test-network
+
+networks:
+    test-network:
+        driver: bridge 
