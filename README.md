@@ -46,7 +46,7 @@ We define the exchange in the `assertExchange` method and the Queue in `assertQu
 
 
 # Consumer
- Opening the `consumer.js` file in the consumer folder. This is where we will consume the message sent by the producer
+ Opening the `consumer.js` file in the consumer folder. This is where we will consume the message sent by the producer.
  
  ```
  package main
