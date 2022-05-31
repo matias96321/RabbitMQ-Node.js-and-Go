@@ -1,6 +1,6 @@
 import { connect } from 'amqplib'  
     
-const message = "Hello World"
+const message = "Hello World message"
 const exchange = "hello_world_exchange"
 const queue = "hello_world_queue"
 const routingKey = "hello_world_key"
@@ -21,7 +21,7 @@ connect("amqp://admin:123456@127.0.0.1:5672/").then((connection)=>{
 
         channel.bindQueue(queue, exchange, routingKey)
 
-        channel.publish(exchange, routingKey, Buffer.from(message)) 
+        channel.publish(exchange, routingKey, Buffer.from(message), { durable: true}) 
         
         console.log("Hello world message sent.");
 
