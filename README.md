@@ -96,3 +96,6 @@ func main() {
 	<-forever
 }
 ```
+In summary, the code establishes a connection to RabbitMQ, creates a communication channel, sets up a consumer to receive messages from the "hello_world_queue", and processes received messages in a separate goroutine. The program runs continuously, waiting for messages from RabbitMQ.
+
+
