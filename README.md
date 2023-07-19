@@ -40,9 +40,7 @@ connect("amqp://admin:123456@127.0.0.1:5672/").then((connection)=>{
 })
 ``` 
 
-Here in the example above, we start by importing the connect method from the amqplib library to create a connection and channel with RabbitMQ.
-
-We define the exchange in the `assertExchange` method and the Queue in `assertQueue` and we bind the exchange and the queue in the `bindQueue` method and publish with the message "Hello World".
+In the example above we establish a connection to RabbitMQ using the `amqplib` library, open a channel, declare the exchange and queue, link the queue to the exchange, publish a message to the exchange with the specified routing key, and then close the channel and the connection after a time delay.
 
 
 # Consumer
